@@ -15,13 +15,13 @@ function getMoviesFromDirector(array, director) { //El método filter también c
 }
 
 // Exercise 3: Calculate the average of the films of a given director.
+
+
 function moviesAverageOfDirector(array, director) {
-  const scoreDirector = array.reduce((total, movie) => {
-    if(movie.director === director){
-      total += movie.score;
-    }
+  let scoreDirector = array.reduce((total, movie) => {
+    if(movie.director === director){ total += movie.score;}
     return total;
-  }
+  },0) // <-- Para decir que el valor inicial es O, pero no chuta. Nada funciona.
 
 // Calculamos media. 
 moviesAverageOfDirector = array.filter((movie) => movie.director === director);
