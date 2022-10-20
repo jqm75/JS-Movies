@@ -1,4 +1,4 @@
-// Exercise 1: Get the array of all directors.
+// Exercise 1: Get the array of all directors
 function getAllDirectors(array) { 
   const result = array.map ((movie) => movie.director); //El método map crea un Array nuevo.
 
@@ -11,22 +11,30 @@ function getMoviesFromDirector(array, director) { //El método filter también c
   const arrayDirector = array.filter ((movie) => movie.director === director)
   
  // console.log("EXERCICE 2 ->", arrayDirector);
-  return arrayDirector;//El método map cre
+  return arrayDirector;
 }
 
-// Exercise 3: Calculate the average of the films of a given director.
-
-
+// Exercise 3: Calculate the average of the films of a given director
 function moviesAverageOfDirector(array, director) {
-  let scoreDirector = array.reduce((total, movie) => {
-    if(movie.director === director){ total += movie.score;}
+  const arrayLength = getMoviesFromDirector(array, director);
+  const scoreDirector = arrayLength.reduce((total, movie) => {
+    total += movie.score;  
     return total;
-  },0) // <-- Para decir que el valor inicial es O, pero no chuta. Nada funciona.
+  }, 0);
+  
+/*   const scoreDirector = array.reduce((total, movie) => {
+    if (movie.director === director) total += movie.score;  
+    return total;
+  }, 0); */ // <-- Para decir que el valor inicial es O.
 
-// Calculamos media. 
-moviesAverageOfDirector = array.filter((movie) => movie.director === director);
-let average = scoreDirector / array.length;
-return average;
+  // Calcular media.
+  const average = Number((scoreDirector / arrayLength.length).toFixed(2));
+
+  return average;
+}
+
+// Exercise 4:  Alphabetic order by title 
+function orderAlphabetically(array) {
   
 }
 
