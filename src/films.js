@@ -25,7 +25,7 @@ function moviesAverageOfDirector(array, director) {
 /*   const scoreDirector = array.reduce((total, movie) => {
     if (movie.director === director) total += movie.score;  
     return total;
-  }, 0); */ // <-- Para decir que el valor inicial es O.
+  }, 0); */ // <-- Para decir que el valor inicial de "total" es O. total = Acumulador (acc)
 
   // Calcular media.
   const average = Number((scoreDirector / arrayLength.length).toFixed(2));
