@@ -39,7 +39,7 @@ function orderAlphabetically(array) {
   const sortMovies = array.map((movie) => {
     return movie.title;
   });
-
+  console.log("EXERCICE 3 -->", sortMovies);
   // Ordeno alfabéticamente con sort()
   sortMovies.sort();
 
