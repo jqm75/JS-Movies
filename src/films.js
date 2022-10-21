@@ -29,35 +29,34 @@ function moviesAverageOfDirector(array, director) {
 
   // Calcular media.
   const average = Number((scoreDirector / arrayLength.length).toFixed(2));
-
   return average;
 }
 
 // Exercise 4:  Alphabetic order by title 
 function orderAlphabetically(array) {
-  //Mapeo con map() el array con array nuevo con los títulos de las pelis.
-  const sortMovies = array.map((movie) => {
-    return movie.title;
-  });
-  console.log("EXERCICE 3 -->", sortMovies);
-  // Ordeno alfabéticamente con sort()
-  sortMovies.sort();
+  const sortMovies = array.map((movie) => movie.title).sort();
+  if (sortMovies.length >= 20) sortMovies.length = 20;
 
-  // Si el array que devuelve es de más de 20 que haga un slice y "corte" las 20 primeras.
-  if (sortMovies.length >= 20) {
-    sortMovies = sortMovies.slice(0, 20);
-  }
-  //Verifico que los arrays sean iguales y que las pelis coiciden.
-  sortMovies.slice(0, 20) === array.slice(0, 20);
+  //sortMovies ? (sortMovies.length >= 20) : (sortMovies.slice (0,20));
+
+  //console.log("EXERCISE 4 ->", sortMovies);
   return sortMovies;
 }
-// Algo no hago bien porque NO VA!
-
-
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {
+function orderByYear(array) {
+  const result = array
+    .map((allMovies) => ({ ...allMovies }))
+    .sort((previous, current) => {
+      const order = previous.year - current.year;
+      if (order == 0) {
+        if (previous.title < current.title) return -1;
+        else return 1;
+      } else return order;
+    });
 
+  //console.log("EXERCISE 5 ->", result);
+  return result;
 }
 
 // Exercise 6: Calculate the average of the movies in a category
