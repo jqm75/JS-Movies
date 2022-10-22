@@ -45,7 +45,7 @@ function orderAlphabetically(array) {
 
 // Exercise 5: Order by year, ascending
 function orderByYear(array) {
-  const sortYears = array.map(movies => ({...movies})).sort((previous, current) => {
+  const sortYears = array.map((movies) => movies).sort((previous, current) => {
     
     const actOfOrdering = previous.year - current.year;
     if (actOfOrdering === 0) {
@@ -60,12 +60,13 @@ function orderByYear(array) {
   return sortYears; 
 }
 
-
-
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
-  
+function moviesAverageByCategory(array, category) {
+  category = array.filter((array) => array.genre == category && array.score != '');
+  const averageScore = category.reduce((score, average) => score + average.score, 0) / category.length;
+  return averageScore; 
 }
+
 
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes() {
