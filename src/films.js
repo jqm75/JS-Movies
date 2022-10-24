@@ -79,21 +79,6 @@ function hoursToMinutes(array) {
   return moviesInMinutes;
 }
 
-/* 
-//dato a convertir
-let hora='3:19:00';
-
-// Dividir en partes
-let parts = hora.split(':');
-
-// Calcular minutos (horas * 60 + minutos)
-let total = parseInt(parts[0]) * 60 + parseInt(parts[1]);
-  
-console.log(total); // 199 */
-
-
-
-
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {
   
