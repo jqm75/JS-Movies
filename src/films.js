@@ -45,17 +45,14 @@ function orderAlphabetically(array) {
 
 // Exercise 5: Order by year, ascending
 function orderByYear(array) {
-  const sortYears = array.map((movies) => movies).sort((previous, current) => {
-    
+  const sortYears = array.map((movies) => movies).sort((previous, current) => {    
     const actOfOrdering = previous.year - current.year;
     if (actOfOrdering === 0) {
-
       if (previous.title < current.title) return -1;
       else return 1;
     }  
     else return actOfOrdering;
   });
-
   //console.log("EXERCISE 5 ->", sortYears);
   return sortYears; 
 }
@@ -64,22 +61,43 @@ function orderByYear(array) {
 function moviesAverageByCategory(array, category) {
   category = array.filter((array) => array.genre == category && array.score != '');
   const averageScore = category.reduce((score, average) => score + average.score, 0) / category.length;
-
+  
   //console.log("EXERCISE 6 ->", averageScore);
-
+  
   return averageScore; 
 }
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
-
+function hoursToMinutes(array) {
+  const moviesInMinutes = array.map((movie) => {
+    let newArrayDuration = movie.duration.replace(/[a-z ]/g, '')
+    let hours = Number(newArrayDuration[0]) > 0 ? Number(newArrayDuration[0]) * 60 : 0;
+    let minutes = newArrayDuration.length > 2 ? Number(newArrayDuration[1] + newArrayDuration[2]) : 0;
+    let convertHoursToMinutes = Number(hours + minutes);
+    return {...movie, duration: convertHoursToMinutes}
+  });
+  return moviesInMinutes;
 }
+
+/* 
+//dato a convertir
+let hora='3:19:00';
+
+// Dividir en partes
+let parts = hora.split(':');
+
+// Calcular minutos (horas * 60 + minutos)
+let total = parseInt(parts[0]) * 60 + parseInt(parts[1]);
+  
+console.log(total); // 199 */
+
+
+
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {
   
 }
-
 
 
 // The following is required to make unit tests work.
