@@ -67,7 +67,7 @@ function moviesAverageByCategory(array, category) {
 
   function hasScore ({score}) {
     if (score) return true
-  }
+  } //by Ara
 
   const moviesWithScore = catMovies.filter(movie => hasScore(movie))
 
