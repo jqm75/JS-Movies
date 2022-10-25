@@ -61,15 +61,13 @@ function orderByYear(array) {
 
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory(array, category) {
-  const catMovies = array.filter(
-    ({ genre }) => genre.includes(category)
-  );
+  const catMovies = array.filter(({ genre }) => genre.includes(category));
 
-  function hasScore ({score}) {
-    if (score) return true
+  function hasScore({ score }) {
+    if (score) return true;
   } //by Ara
 
-  const moviesWithScore = catMovies.filter(movie => hasScore(movie))
+  const moviesWithScore = catMovies.filter((movie) => hasScore(movie));
 
   const averageScore =
     moviesWithScore.reduce((score, average) => score + average.score, 0) /
@@ -97,7 +95,25 @@ function hoursToMinutes(array) {
 }
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {}
+function bestFilmOfYear(array, year) {
+  const yearOfTheMovie = array.filter((movie) => movie.year === year);
+
+  if (yearOfTheMovie.length > 1)
+    yearOfTheMovie.sort((Film1, Film2) =>
+      Film1.score === Film2.score ? 0 : Film1.score > Film2.score ? -1 : 1
+    ); // by Nacho
+
+  const bestFilm = yearOfTheMovie.filter(
+    (movie) => movie.score === yearOfTheMovie[0].score
+  );
+
+  console.log(
+    '🚀 ~ file: films.js ~ line 108 ~ bestFilmOfYear ~ bestFilm',
+    bestFilm
+  );
+
+  return bestFilm;
+}
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */

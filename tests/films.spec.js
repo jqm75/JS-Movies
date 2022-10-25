@@ -405,20 +405,20 @@ describe('Function "bestFilmOfYear"', () => {
   it('should return the best film of a year, searching in an array', () => {
     const testArr = [
       {
-        title: 'Film1',
-        year: 1957,
-        director: 'Stanley Kubrick',
-        duration: '1h 28min',
-        genre: ['Drama', 'War'],
-        score: 10
-      },
-      {
         title: 'Film2',
         year: 1957,
         director: 'Stanley Kubrick',
         duration: '1h 28min',
         genre: ['Drama', 'War'],
         score: 8.4
+      },
+      {
+        title: 'Film1',
+        year: 1957,
+        director: 'Stanley Kubrick',
+        duration: '1h 28min',
+        genre: ['Drama', 'War'],
+        score: 10
       },
       {
         title: 'Film3',
