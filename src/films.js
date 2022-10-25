@@ -107,11 +107,6 @@ function bestFilmOfYear(array, year) {
     (movie) => movie.score === yearOfTheMovie[0].score
   );
 
-  console.log(
-    '🚀 ~ file: films.js ~ line 108 ~ bestFilmOfYear ~ bestFilm',
-    bestFilm
-  );
-
   return bestFilm;
 }
 
